@@ -5,13 +5,16 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.youtube.com/"
+                "https://www.youtube.com/*"
             ],
             "js": [
                 "content_main.js"
             ]
         }
     ],
+    "background": {
+        "service_worker": "sw.js"
+    },
     "description": "Extension that allows user to filter their YouTube Homepage Recommendation.",
     "action": {
         "default_icon": "icon.png",
@@ -22,7 +25,6 @@
         "128": "icon.png"
     },
     "permissions": [
-        "storage",
-        "tabs"
+        "storage"
     ]
 }

@@ -1,13 +1,19 @@
-function store_data(request) {
-  chrome.storage.sync.set({ data: JSON.stringify(request) }, function () {
-    console.log("Settings saved");
-  });
-}
+console.log("content_main.js loaded try8");
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  store_data(request);
-  sendResponse({ farewell: "received" });
-  location.reload();
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  if (namespace === "local") {
+    console.log("------------------------RED ALERT------------------------");
+    for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+      if (key === "yrmPolicy" && oldValue !== newValue) {
+        console.log("RELOAD");
+        chrome.storage.sync.get(["data"], function (items) {
+          categories = JSON.parse(items.data);
+          console.log(categories);
+        });
+        location.reload();
+      }
+    }
+  }
 });
 
 let categories = {};
@@ -24,15 +30,14 @@ chrome.storage.sync.get(["data"], function (items) {
 let NewLength = 0;
 let OldLength = 0;
 async function modify_page() {
-  let timer = setInterval(check, 1000);
-  function check() {
+  let timer = setInterval(() => {
     const elements = document.querySelectorAll(".ytd-rich-grid-row");
     OldLength = elements.length;
     if (OldLength != 0) {
       clearInterval(timer);
       RemoveElements(elements);
     }
-  }
+  }, 1000);
 }
 
 window.onscroll = function (e) {
@@ -77,4 +82,8 @@ async function RemoveElements(elements) {
       }
     }
   });
+}
+
+function logc(fn = "notsent", data, data2 = "") {
+  console.log(`[content_main.js] function:[${fn}] data:[${data}] [${data2}]`);
 }

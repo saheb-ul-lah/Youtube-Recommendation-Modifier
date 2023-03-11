@@ -3,7 +3,10 @@ const boxes = document.querySelectorAll(".box");
 setup();
 
 function setup() {
+  log("setup", "fn start");
+
   chrome.storage.sync.get(["data"], function (items) {
+    log("setup", "chrome.storage.sync.get", JSON.stringify(items));
     try {
       categories = JSON.parse(items.data);
       boxes.forEach((box) => {
@@ -43,16 +46,18 @@ function setup() {
     });
   }
 
-  function SendData() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      console.log(tabs[0].id, " categories: ", categories);
+  async function SendData() {
+    log("[setup][SendData]", "fn start try7");
 
-      chrome.tabs
-        .sendMessage(tabs[0].id, categories)
-        .then((response) => {
-          console.log("**********************", response);
-        })
-        .catch(console.log("some error"));
+    chrome.storage.sync.set({ data: JSON.stringify(categories) }, () => {
+      chrome.storage.local.get("yrmPolicy", function (data) {
+        chrome.storage.local
+          .set({ yrmPolicy: -1 * data.yrmPolicy })
+          .then(() => {})
+          .catch((e) => {
+            console.log(e);
+          });
+      });
     });
   }
 }
@@ -69,3 +74,7 @@ let settingUrl = chrome.runtime.setUninstallURL(
   "https://docs.google.com/forms/d/e/1FAIpQLSfJN5uz5FHbQXzZ0DK2XhBytrnHDTxPdNljOSeZFsmFJQz4HA/viewform"
 );
 settingUrl.then(onSetURL, onError);
+
+function log(fn = "notsent", data, data2 = "") {
+  console.log(`[popup.js] function:[${fn}] data:[${data}] [${data2}]`);
+}
