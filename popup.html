@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youtube Recommendation Modifier </title>
-<script src = "popup.js" type="text/javascript" defer></script>  
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Recommendation Modifier </title>
+    <script src="popup.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <div class="container">
         <div class="title">Youtube Recommendation Modifier</div>
         <div class="categories">
             <div class="Education category">
-                <input type="checkbox" id = "Edu" class="box" checked >
+                <input type="checkbox" id="Edu" class="box" checked>
                 <label for="Edu">Education</label>
             </div>
             <div class="ScienceTechnology category">
-                <input type="checkbox" id = "Sci" checked  class="box">
+                <input type="checkbox" id="Sci" checked class="box">
                 <label for="Sci">Science & Technology</label>
             </div>
             <div class="Sports category">
-                <input type="checkbox" id = "Spo" checked  class="box">
+                <input type="checkbox" id="Spo" checked class="box">
                 <label for="Spo">Sports</label>
             </div>
             <div class="Entertainment category">
-                <input type="checkbox" id = "Ent" checked  class="box">
+                <input type="checkbox" id="Ent" checked class="box">
                 <label for="Ent">Entertainment</label>
             </div>
             <div class="FilmAnimation category">
-                <input type="checkbox" id = "Fil" checked  class="box">
+                <input type="checkbox" id="Fil" checked class="box">
                 <label for="Fil">Film & Animation</label>
             </div>
             <div class="Music category">
-                <input type="checkbox" id = "Mus" checked  class="box">
+                <input type="checkbox" id="Mus" checked class="box">
                 <label for="Mus">Music</label>
             </div>
             <div class="TravelEvents category">
-                <input type="checkbox" id = "Tra" checked  class="box">
+                <input type="checkbox" id="Tra" checked class="box">
                 <label for="Tra">Travel & Events</label>
             </div>
             <div class="Comedy category">
-                <input type="checkbox" id = "Com" checked  class="box">
+                <input type="checkbox" id="Com" checked class="box">
                 <label for="Com">Comedy</label>
             </div>
             <div class="PeopleBlogs category">
-                <input type="checkbox" id = "Peo" checked  class="box">
+                <input type="checkbox" id="Peo" checked class="box">
                 <label for="Peo">PeopleBlogs</label>
             </div>
             <div class="Gaming category">
-                <input type="checkbox" id = "Gam" checked  class="box">
+                <input type="checkbox" id="Gam" checked class="box">
                 <label for="Gam">Gaming</label>
             </div>
             <div class="AutosVehicles category">
-                <input type="checkbox" id = "Aut" checked  class="box">
+                <input type="checkbox" id="Aut" checked class="box">
                 <label for="Aut">Autos & Vehicles</label>
             </div>
             <div class="PetsAnimals category">
-                <input type="checkbox" id = "Pet" checked  class="box">
+                <input type="checkbox" id="Pet" checked class="box">
                 <label for="Pet">Pets & Animals</label>
             </div>
             <div class="NewsPolitics category">
-                <input type="checkbox" id = "New" checked  class="box">
+                <input type="checkbox" id="New" checked class="box">
                 <label for="New">News & Politics</label>
             </div>
             <div class="HowtoStyle category">
-                <input type="checkbox" id = "How" checked  class="box">
+                <input type="checkbox" id="How" checked class="box">
                 <label for="How">Howto & Style</label>
             </div>
             <div class="NonprofitsActivism category">
-                <input type="checkbox" id = "Non" checked class="box">
+                <input type="checkbox" id="Non" checked class="box">
                 <label for="Non">Nonprofits & Activism</label>
             </div>
         </div>
         <div class="buttons">
-            <button id = "submit1"   class="button" >Submit</button> 
-            <button id = "reset"     class="button" >Reset</button>
-            <button id = "selectAll" class="button" >Select All</button>
+            <button id="submit1" class="button">Submit</button>
+            <button id="reset" class="button">Reset</button>
+            <button id="selectAll" class="button">Select All</button>
         </div>
         <div class="footer">
             <div>
-                A chrome extension that gives power to the user to filter the YouTube homepage 
+                A chrome extension that gives power to the user to filter the YouTube homepage
                 Recommendation in order to increase the productivity
             </div>
             <div class="message">
@@ -90,17 +92,24 @@
         </div>
         <div class="links">
             <a href="https://github.com/havefocus/Youtube-Recommendation-Modifier" target="_blank">Github</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJN5uz5FHbQXzZ0DK2XhBytrnHDTxPdNljOSeZFsmFJQz4HA/viewform" target="_blank">Feedback</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJN5uz5FHbQXzZ0DK2XhBytrnHDTxPdNljOSeZFsmFJQz4HA/viewform"
+                target="_blank">Feedback</a>
         </div>
         <div class="donate-button">
-            <a href="https://rzp.io/l/YoutubeRecommendationModifier" target="_blank"><button class="donate"><img class="images" src="img.png"></button></a>
-            <form method="POST" action="https://mainnet.demo.btcpayserver.org/api/v1/invoices" class="btcpay-form btcpay-form--block"  target="_blank">
-            <input type="hidden" name="storeId" value="H1t3wLGtuWkRCSDMV15ph7Ur9PdEK1UdZhTwYch8MCqz" />
-            <input type="hidden" name="notifyEmail" value="helpatfocus@gmail.com" />
-            <input type="hidden" name="currency" value="USD" />
-            <input type="image" class="submit" name="submit" src="https://mainnet.demo.btcpayserver.org/img/paybutton/pay.svg" style="width:110px; border-radius:5px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+            <a href="https://rzp.io/l/YoutubeRecommendationModifier" target="_blank"><button class="donate"><img
+                        class="images" src="img.png"></button></a>
+            <form method="POST" action="https://mainnet.demo.btcpayserver.org/api/v1/invoices"
+                class="btcpay-form btcpay-form--block" target="_blank">
+                <input type="hidden" name="storeId" value="H1t3wLGtuWkRCSDMV15ph7Ur9PdEK1UdZhTwYch8MCqz" />
+                <input type="hidden" name="notifyEmail" value="helpatfocus@gmail.com" />
+                <input type="hidden" name="currency" value="USD" />
+                <input type="image" class="submit" name="submit"
+                    src="https://mainnet.demo.btcpayserver.org/img/paybutton/pay.svg"
+                    style="width:110px; border-radius:5px"
+                    alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
         </div>
     </div>
-</form>
+    </form>
 </body>
+
 </html>
